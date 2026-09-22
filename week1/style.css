@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+    margin-top: 100px;
+}
+
+#cat {
+    font-size: 100px;
+    margin: 30px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+}
