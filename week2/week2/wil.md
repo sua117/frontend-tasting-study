@@ -4,12 +4,12 @@
 *실습을 열심히 해보고 제대로 이해하자*
 ---
 ### 오늘의 키워드
-html, css, javascript, dom, event
-- html : 제목, 글, 이미지, 버튼이 있다는 것을 브라우저에게 알려주는 역할
-- css : 색상, 크기, 간격, 위치 등이 웹페이지에 어떻게 보일지 적는 언어
-- javascript : 웹페이지에 변화와 동작을 만드는 언어
-- dom : document object model
-- event : 사람이 클릭
+react, library, ui, jsx
+- react : ui를 만들기 위한 도구 (언어 아님)
+- library : 다른 프로그램에서 가져다 사용할 수 있도록 만들어놓은 코드의 모음
+- ui : javascript + react
+- jsx : javascript 안에서 ui를 표현하기 위한 문법
+
 ---
 ### 느낀점
-각 언어가 어떤 역할을 하는지 잘 몰랐는데 쉽게 이해할 수 있었다. querySelector("h1")이 화면에서 h1을 찾고, textContent로 글자를 바꾸는 과정을 직접 해보니 JavaScript를 이용해 웹페이지의 내용을 변경할 수 있다는 점이 흥미로웠다. 인스타그램처럼 화면이 복잡해진다면 어떻게 될지 기대된다.
+왜 {}여기에 값을 넣는건지 몰랐는데 javascript랑 jsx를 연결해서 달라지는 값을 표현하기 위함임을 알게 되었다. 직접 화면을 바꿔보니까 열심히 해서 화면을 보는 눈을 키우고 싶다는 생각도 들었다.
