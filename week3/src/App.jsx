@@ -3,31 +3,37 @@ import "./App.css";
 const posts = [
   {
     id: 1,
-    username: "go",
+    username: "spring",
     likes: 100,
-    caption: "글1",
+    caption: "봄",
+    image: "/images/spring.png",
+    profile: "/images/flower.png",
   },
   {
     id: 2,
-    username: "sua",
+    username: "summer",
     likes: 200,
-    caption: "글2",
+    caption: "여름",
+    image: "/images/summer.png",
+    profile: "/images/watermelon.png",
   },
   {
     id: 3,
-    username: "hongik",
+    username: "fall",
     likes: 300,
-    caption: "글3",
+    caption: "가을",
+    image: "/images/fall.png",
+    profile: "/images/maple.png",
   },
 ];
 
-function Post({ username, likes, caption }) {
+function Post({ username, likes, caption, image, profile }) {
   return (
     <article className="post">
       <header className="post-profile">
         <img
           className="profile-image"
-          src="/images/eden-avatar.png"
+          src={profile}
           alt={`${username} 프로필`}
         />
 
@@ -43,8 +49,8 @@ function Post({ username, likes, caption }) {
       <div className="post-image-area">
         <img
           className="post-image"
-          src="/images/wow.png"
-          alt="홍익대학교 마스코트"
+          src={image}
+          alt={caption}
         />
       </div>
 
@@ -99,6 +105,8 @@ function App() {
           username={post.username}
           likes={post.likes}
           caption={post.caption}
+          image={post.image}
+          profile={post.profile}
         />
       ))}
     </main>
