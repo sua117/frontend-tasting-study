@@ -1,3 +1,5 @@
+
+import { useState, useEffect } from "react";
 import "./App.css";
 
 const posts = [
@@ -28,6 +30,23 @@ const posts = [
 ];
 
 function Post({ username, likes, caption, image, profile }) {
+  const [liked, setLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(likes);
+
+  useEffect(() => {
+    console.log(username, "좋아요 상태:", liked);
+  }, [liked, username]);
+
+  const handleLike = () => {
+    if (liked) {
+      setLiked(false);
+      setLikeCount((prev) => prev - 1);
+    } else {
+      setLiked(true);
+      setLikeCount((prev) => prev + 1);
+    }
+  };
+
   return (
     <article className="post">
       <header className="post-profile">
@@ -56,9 +75,17 @@ function Post({ username, likes, caption, image, profile }) {
 
       <div className="post-actions">
         <div className="left-actions">
-          <button type="button" aria-label="좋아요">
+          <button
+            type="button"
+            aria-label="좋아요"
+            onClick={handleLike}
+          >
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+              <path
+                d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+                fill={liked ? "#ed4956" : "none"}
+                stroke={liked ? "#ed4956" : "currentColor"}
+              />
             </svg>
           </button>
 
@@ -84,7 +111,7 @@ function Post({ username, likes, caption, image, profile }) {
 
       <section className="post-content">
         <p className="like-count">
-          좋아요 <strong>{likes}</strong>개
+          좋아요 <strong>{likeCount}</strong>개
         </p>
 
         <p className="caption">
